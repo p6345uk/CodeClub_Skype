@@ -29,7 +29,7 @@ namespace lyncx
         {
             if (!(ActiveExternalAudioCalls.Count() == 0))
             {
-                SendStatus("INCALL");
+                SendStatus("In a Call");
             }
         }
 
