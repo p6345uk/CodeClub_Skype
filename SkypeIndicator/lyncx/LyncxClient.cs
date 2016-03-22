@@ -255,8 +255,8 @@ namespace lyncx
             }
             foreach (var deactivatedCall in ActiveAudioCallsToClear)
             {
-                ActiveExternalAudioCalls.Remove(deactivatedCall);
-                ActiveAudioCalls.Remove(deactivatedCall);
+                ActiveExternalAudioCalls.RemoveAll(ra => ra.Equals(deactivatedCall, StringComparison.InvariantCultureIgnoreCase));
+                ActiveAudioCalls.RemoveAll(ra => ra.Equals(deactivatedCall, StringComparison.InvariantCultureIgnoreCase));
                 Console.WriteLine("Audio Call ID:" + deactivatedCall + " Is now Closed");
             }
             ExternalStatusChanged();
